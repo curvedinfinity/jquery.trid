@@ -28,8 +28,8 @@
 		}
 	],
 	"bugs": "https://github.com/curvedinfinity/jquery.trid/issues",
-	"homepage": "https://github.com/jquery/jquery.color",
-	"docs": "https://github.com/jquery/jquery.color",
+	"homepage": "https://github.com/curvedinfinity/jquery.trid",
+	"docs": "https://github.com/curvedinfinity/jquery.trid",
 	"download": "https://github.com/curvedinfinity/jquery.trid/archive/master.zip",
 	"dependencies": {
 		"jquery": ">=1.5"
