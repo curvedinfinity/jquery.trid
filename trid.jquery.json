@@ -7,9 +7,11 @@
 		"OpenGL",
 		"transforms",
 		"CSS3",
-		"animation"
+		"animation",
+		"html5",
+		"jquery"
 	],
-	"version": "2.1.2",
+	"version": "0.1.1",
 	"author": {
 		"name": "Chase Adams"
 	},
