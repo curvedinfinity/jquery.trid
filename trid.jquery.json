@@ -1,7 +1,7 @@
 {
 	"name": "trid",
 	"title": "jQuery Trid",
-	"description": "3Dification for all your average HTML5 DOM elements.",
+	"description": "3Dification for all your average HTML5 DOM elements. Live example: http://curvedinfinity.com/jquery.trid/example.html",
 	"keywords": [
 		"3D",
 		"OpenGL",
