@@ -1,0 +1,35 @@
+{
+    "name": "trid",
+    "title": "jQuery Trid",
+    "description": "3Dification for all your average HTML5 DOM elements.",
+    "keywords": [
+        "3D",
+        "OpenGL",
+        "transforms",
+        "CSS3",
+        "animation",
+    ],
+    "version": "2.1.2",
+    "author": {
+        "name": "Chase Adams"
+    },
+    "maintainers": [
+        {
+            "name": "Chase Adams",
+            "email": "chase@curvedinfinity.com"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/jquery/jquery-color/blob/2.1.2/MIT-LICENSE.txt"
+        }
+    ],
+    "bugs": "https://github.com/curvedinfinity/jquery.trid/issues",
+    "homepage": "https://github.com/jquery/jquery.color",
+    "docs": "https://github.com/jquery/jquery.color",
+    "download": "https://github.com/curvedinfinity/jquery.trid/archive/master.zip",
+    "dependencies": {
+        "jquery": ">=1.5"
+    }
+}
