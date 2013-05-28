@@ -1,0 +1,99 @@
+<!--
+Copyright 2013 Best Value Technology Inc.
+Distributed under the MIT license:
+http://opensource.org/licenses/MIT
+Authored by Chase Adams
+-->
+<!doctype html>
+<html>
+<head>
+<title>Jquery.trid Example</title>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="jquery.trid.js"></script>
+<style>
+div.sprite {width: 1200px; height: 1200px; top: -600px; left: -600px; border: 1px solid black; font-size: 100px; background-image: url('Morning_Dew_by_Lars_Clausen.png'); background-size: cover; color: white;}
+div.sprite h3 { margin-left: 100px; font-family: Arial;}
+</style>
+<script>
+$(function() {
+	$('#view').tridView({useMouse: true});
+	$('#box').trid({z:-1000});
+	$('#box1').trid({rx:90,y:-600});
+	$('#box2').trid({rx:-90,y:600});
+	$('#box3').trid({ry:90,x:600});
+	$('#box4').trid({ry:-90,x:-600});
+	$('#box5').trid({rz:180,z:-600});
+	$('#box6').trid({rz:0,z:600});
+	a = 0;
+	window.setInterval(function() {
+		$('#box').trid({rz:a+=0.1,rx:a*0.77,ry:a*1.13});
+		$.tridTick();
+	},1);
+});
+</script>
+</head>
+<body>
+
+<div id="view" style="z-index: -1">
+<div id="box">
+<div id="box1" class="sprite"><h3>Side 1</h3></div>
+<div id="box2" class="sprite"><h3>Side 2</h3></div>
+<div id="box3" class="sprite"><h3>Side 3</h3></div>
+<div id="box4" class="sprite"><h3>Side 4</h3></div>
+<div id="box5" class="sprite"><h3>Side 5</h3></div>
+<div id="box6" class="sprite"><h3>Side 6</h3></div>
+</div>
+</div>
+
+<!-- Begin documentation text -->
+<div style="width: 500px; height: 600px; overflow: scroll; overflow-x: hidden;">
+<h1>Jquery.trid Example</h1>
+<h3>Overview</h3>
+<p>Welcome to <code>Jquery.trid</code>, a Jquery plugin which automatically converts DOM elements into a 3D scene using CSS3 Transforms. Try dragging the example around. Then drag the example while holding CTRL. Trid is designed for simplicity and a small basic app footprint.</p>
+<h3>Example DOM</h3>
+<p><small><code>
+&lt;div id=&quot;view&quot; style=&quot;z-index: -1&quot;&gt; <br>
+&lt;div id=&quot;box&quot;&gt;<br>
+&lt;div id=&quot;box1&quot; class=&quot;sprite&quot;&gt;&lt;h3&gt;Side 1&lt;/h3&gt;&lt;/div&gt;<br>
+&lt;div id=&quot;box2&quot; class=&quot;sprite&quot;&gt;&lt;h3&gt;Side 2&lt;/h3&gt;&lt;/div&gt;<br>
+&lt;div id=&quot;box3&quot; class=&quot;sprite&quot;&gt;&lt;h3&gt;Side 3&lt;/h3&gt;&lt;/div&gt;<br>
+&lt;div id=&quot;box4&quot; class=&quot;sprite&quot;&gt;&lt;h3&gt;Side 4&lt;/h3&gt;&lt;/div&gt;<br>
+&lt;div id=&quot;box5&quot; class=&quot;sprite&quot;&gt;&lt;h3&gt;Side 5&lt;/h3&gt;&lt;/div&gt;<br>
+&lt;div id=&quot;box6&quot; class=&quot;sprite&quot;&gt;&lt;h3&gt;Side 6&lt;/h3&gt;&lt;/div&gt;<br>
+&lt;/div&gt;&lt;/div&gt;
+</code></small></p>
+<h3>Example Code</h3>
+<p><small><code>
+$(function() {<br>
+	$('#view').tridView();<br>
+	$('#box').trid({z:-1000});<br>
+	$('#box1').trid({rx:90,y:-600});<br>
+	$('#box2').trid({rx:-90,y:600});<br>
+	$('#box3').trid({ry:90,x:600});<br>
+	$('#box4').trid({ry:-90,x:-600});<br>
+	$('#box5').trid({rz:180,z:-600});<br>
+	$('#box6').trid({rz:0,z:600});<br>
+	a = 0;<br>
+	window.setInterval(function() {<br>
+		$('#box').trid({rz:a+=0.1,rx:a*0.77,ry:a*1.13});<br>
+		$.tickTrid();<br>
+	},1);<br>
+});
+</code></small></p>
+<h3>How to Use</h3>
+<dl>
+<dt><b>$([selector]).tridView({"useMouse":[boolean],"perspective":[number]})</b></dt>
+<dd>Sets up the trid scene using this DOM object as the root. Returns the same selector.</dd>
+<dt><b>$([selector]).trid({"x":[number],"y":[number],"z":[number],"rx":[number],"ry":[number],"rz":[number],"sx":[number],"sy":[number],"sz":[number],})</b></dt>
+<dd>Enables 3D transformation on this DOM element. XYZ represent position translation. RxRyRz represent rotation. SxSySz represent scaling. All transformations are applied to the parent DOM element's transform matrix (IE, transforms stack from parents to children). All transformations are optional and previous transformation settings will be preserved if they are not replaced with new numbers. All calls to trid() are buffered until the frame is resolved using tridTick(). Trid() returns the selector it was called from.</dd>
+<dt><b>$.tridTick()</b></dt>
+<dd>Applies all pending trid transforms.</dd>
+</dl>
+<h3>Postscript</h3>
+<p>Selecting is disabled across the DOM while trid captures the mouse. To disable this, call tridView() with no arguments.</p>
+<p>As of writing this, the inner scrollbar of this div is broken due to Jquery 1.9.1 firing mousedown but not mouseup on it from the context of window. This is a documented bug in Jquery. There are workarounds but I have not put them in this example in case the bug is fixed. Thanks -Chase</p>
+</div>
+<!-- End documentation text -->
+
+</body>
+</html>
